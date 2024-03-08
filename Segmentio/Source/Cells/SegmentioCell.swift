@@ -196,9 +196,19 @@ class SegmentioCell: UICollectionViewCell {
             multiplier: 1,
             constant: 0
         )
+        let segmentTitleLabelHorizontalCenterConstraint = NSLayoutConstraint(
+            item: segmentTitleLabel,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: containerView,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: 0
+        )
         
         addConstraints([
-            segmentTitleLabelVerticalCenterConstraint
+            segmentTitleLabelVerticalCenterConstraint,
+            segmentTitleLabelHorizontalCenterConstraint
         ])
     }
     
