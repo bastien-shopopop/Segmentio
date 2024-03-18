@@ -9,8 +9,6 @@ import UIKit
 
 class BadgeView: UIView {
     
-    @IBOutlet var contentView: UIView!
-    
     class func instanceFromNib() -> BadgeView {
         let nibName = "BadgeView"
         let podBundle = Bundle(for: self.classForCoder())
@@ -36,11 +34,11 @@ class BadgeView: UIView {
     private func initState() {
         
         // Make the corners rounded
-        self.contentView.layer.cornerRadius = self.contentView.frame.width / 2
+        self.layer.cornerRadius = self.frame.width / 2
         self.clipsToBounds = true
     }
     
     func setBadgeBackgroundColor(_ color: UIColor) {
-        self.contentView.backgroundColor = color
+        self.backgroundColor = color
     }
 }
