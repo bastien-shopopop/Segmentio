@@ -37,8 +37,7 @@ class BadgeView: UIView {
         let podBundle = Bundle(for: self.classForCoder())
         
         if let bundleURL = podBundle.url(forResource: "Segmentio", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
-                let badgeView = UINib(nibName: nibName, bundle: bundle)
-                .instantiate(withOwner: nil, options: nil)[0] as! BadgeView
+                let badgeView = UINib(nibName: nibName, bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as! BadgeView
                 badgeView.frame = CGRect(x: 0, y: 0, width: 7, height: 7) // Set frame size
                 return badgeView
         }
