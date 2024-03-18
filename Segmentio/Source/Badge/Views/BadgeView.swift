@@ -9,7 +9,7 @@ import UIKit
 
 class BadgeView: UIView {
     
-    @IBOutlet var contentView: UIView!
+    @IBOutlet fileprivate weak var contentView: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
