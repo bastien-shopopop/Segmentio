@@ -32,7 +32,7 @@ class BadgeView: UIView {
         self.contentView.backgroundColor = color
     }
     
-    class func instanceFromNib(size: BadgeSize) -> BadgeView {
+    class func instanceFromNib() -> BadgeView {
         let nibName = "BadgeView"
         let podBundle = Bundle(for: self.classForCoder())
         

@@ -20,8 +20,7 @@ class BadgeViewPresenter {
             }
         }
         if badgeView == nil {
-            badgeView = BadgeView()
-            badgeView.setBadgeBackgroundColor(backgroundColor)
+            badgeView = badgeViewWithoutCounterValue(backgroundColor: backgroundColor)
             badgeView.translatesAutoresizingMaskIntoConstraints = false
             containerView.addSubview(badgeView)
             containerView.bringSubviewToFront(badgeView)
@@ -133,6 +132,13 @@ extension BadgeViewPresenter {
         let view = BadgeWithCounterView.instanceFromNib(size: size)
         view.setBadgeBackgroundColor(backgroundColor)
         view.setBadgeCounterValue(counter)
+        return view
+        
+    }
+    
+    fileprivate func badgeViewWithoutCounterValue(backgroundColor: UIColor) -> BadgeView {
+        let view = BadgeView.instanceFromNib()
+        view.setBadgeBackgroundColor(backgroundColor)
         return view
         
     }
