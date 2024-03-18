@@ -34,11 +34,12 @@ class BadgeView: UIView {
         let nibName = "BadgeView"
         let podBundle = Bundle(for: self.classForCoder())
         
-        if let bundleURL = podBundle.url(forResource: "Segmentio", withExtension: "bundle"),
-           let bundle = Bundle(url: bundleURL) {
-            return UINib(nibName: nibName, bundle: bundle)
+        if let bundleURL = podBundle.url(forResource: "Segmentio", withExtension: "bundle"), let bundle = Bundle(url: bundleURL) {
+                let badgeView = UINib(nibName: nibName, bundle: bundle)
                 .instantiate(withOwner: nil, options: nil)[0] as! BadgeView
+                badgeView.frame = CGRect(x: 0, y: 0, width: 7, height: 7) // Set frame size
+                return badgeView
         }
-        return BadgeView(frame: .zero)
+        return BadgeView(frame: CGRect(x: 0, y: 0, width: 7, height: 7))
     }
 }
