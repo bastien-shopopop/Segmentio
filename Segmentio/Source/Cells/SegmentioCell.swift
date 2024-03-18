@@ -166,13 +166,7 @@ class SegmentioCell: UICollectionViewCell {
                 badgeSize: .standard
             )
         } else if style == .noCounter {
-//            badgePresenter.addBadgeForContainerView(containerView!, backgroundColor: color)
-            badgePresenter.addBadgeForContainerView(
-                imageContainerView!,
-                counterValue: badgeCount,
-                backgroundColor: color,
-                badgeSize: .standard
-            )
+            badgePresenter.addBadgeForContainerView(containerView!, backgroundColor: color)
         } else {
             badgePresenter.addBadgeForContainerView(
                 containerView!,
