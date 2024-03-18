@@ -9,6 +9,8 @@ import UIKit
 
 class BadgeView: UIView {
     
+    @IBOutlet var contentView: UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initState()
@@ -22,12 +24,12 @@ class BadgeView: UIView {
     private func initState() {
         
         // Make the corners rounded
-        self.layer.cornerRadius = min(self.frame.size.width, self.frame.size.height) / 2
+        self.contentView.layer.cornerRadius = self.contentView.frame.width / 2
         self.clipsToBounds = true
     }
     
     func setBadgeBackgroundColor(_ color: UIColor) {
-        self.backgroundColor = color
+        self.contentView.backgroundColor = color
     }
     
     class func instanceFromNib() -> BadgeView {
