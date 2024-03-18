@@ -206,7 +206,7 @@ open class Segmentio: UIView {
     private func setupCellWithStyle(_ style: SegmentioStyle) {
         var cellClass: SegmentioCell.Type {
             switch style {
-            case .onlyLabel:
+            case .onlyLabel, .noCounter:
                 return SegmentioCellWithLabel.self
             case .onlyImage:
                 return SegmentioCellWithImage.self
