@@ -9,8 +9,6 @@ import UIKit
 
 class BadgeView: UIView {
     
-    @IBOutlet var contentView: UIView!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initState()
@@ -29,7 +27,7 @@ class BadgeView: UIView {
     }
     
     func setBadgeBackgroundColor(_ color: UIColor) {
-        self.contentView.backgroundColor = color
+        self.backgroundColor = color
     }
     
     class func instanceFromNib() -> BadgeView {
