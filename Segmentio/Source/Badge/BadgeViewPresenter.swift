@@ -10,6 +10,25 @@ import UIKit
 
 class BadgeViewPresenter {
     
+    func addBadgeForContainerView(_ containerView: UIView, backgroundColor: UIColor = .red) {
+        
+        var badgeView: BadgeView!
+        for view in containerView.subviews {
+            if view is BadgeView {
+                badgeView = view as? BadgeView
+                badgeView?.setBadgeBackgroundColor(backgroundColor)
+            }
+        }
+        if badgeView == nil {
+            badgeView = BadgeView()
+            badgeView.setBadgeBackgroundColor(backgroundColor)
+            badgeView.translatesAutoresizingMaskIntoConstraints = false
+            containerView.addSubview(badgeView)
+            containerView.bringSubviewToFront(badgeView)
+            setupBadgeConstraints(badgeView)
+        }
+    }
+    
     func addBadgeForContainerView(_ containerView: UIView, counterValue: Int, backgroundColor: UIColor = .red,
                                   badgeSize: BadgeSize = .standard) {
         var badgeView: BadgeWithCounterView!
@@ -35,6 +54,33 @@ class BadgeViewPresenter {
                 view.removeFromSuperview()
             }
         }
+    }
+    
+    fileprivate func setupBadgeConstraints(_ badgeView: BadgeView) {
+        let constraintConstant:CGFloat = -5.0
+        let segmentTitleLabelHorizontalCenterConstraint =
+        NSLayoutConstraint(
+            item: badgeView,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: badgeView.superview,
+            attribute: .top,
+            multiplier: 1,
+            constant: 6.0
+        )
+        
+        let segmentTitleLabelVerticalCenterConstraint =
+        NSLayoutConstraint(
+            item: badgeView,
+            attribute: .trailing,
+            relatedBy: .equal,
+            toItem: badgeView.superview,
+            attribute: .trailing,
+            multiplier: 1,
+            constant: constraintConstant
+        )
+        segmentTitleLabelHorizontalCenterConstraint.isActive = true
+        segmentTitleLabelVerticalCenterConstraint.isActive = true
     }
     
     fileprivate func setupBadgeConstraints(_ badgeView: BadgeWithCounterView, counterValue: Int) {
