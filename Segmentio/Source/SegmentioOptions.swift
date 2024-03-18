@@ -157,7 +157,7 @@ public enum SegmentioStyle: String {
     
     public func isWithText() -> Bool {
         switch self {
-        case .onlyLabel, .imageOverLabel, .imageUnderLabel, .imageBeforeLabel, .imageAfterLabel:
+            case .onlyLabel, .noCounter, .imageOverLabel, .imageUnderLabel, .imageBeforeLabel, .imageAfterLabel:
             return true
         default:
             return false
