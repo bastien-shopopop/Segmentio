@@ -9,7 +9,7 @@ import UIKit
 
 class BadgeView: UIView {
     
-    @IBOutlet fileprivate weak var contentView: UIView!
+    @IBOutlet var contentView: UIView!
     
     class func instanceFromNib() -> BadgeView {
         let nibName = "BadgeView"
