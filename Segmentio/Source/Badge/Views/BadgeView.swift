@@ -13,18 +13,15 @@ class BadgeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.initState()
+        initState()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.initState()
+        initState()
     }
     
     private func initState() {
-        Bundle.main.loadNibNamed("BadgeView", owner: self, options: nil)
-        addSubview(self.contentView)
-        contentView.frame = bounds
         
         // Make the corners rounded
         self.layer.cornerRadius = min(self.frame.size.width, self.frame.size.height) / 2
@@ -33,5 +30,17 @@ class BadgeView: UIView {
     
     func setBadgeBackgroundColor(_ color: UIColor) {
         self.contentView.backgroundColor = color
+    }
+    
+    class func instanceFromNib(size: BadgeSize) -> BadgeView {
+        let nibName = "BadgeView"
+        let podBundle = Bundle(for: self.classForCoder())
+        
+        if let bundleURL = podBundle.url(forResource: "Segmentio", withExtension: "bundle"),
+           let bundle = Bundle(url: bundleURL) {
+            return UINib(nibName: nibName, bundle: bundle)
+                .instantiate(withOwner: nil, options: nil)[0] as! BadgeView
+        }
+        return BadgeView(frame: .zero)
     }
 }
