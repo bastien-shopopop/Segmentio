@@ -10,12 +10,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view userInteractionEnabled="NO" contentMode="scaleToFill" id="CkP-zk-fKb" customClass="BadgeView" customModule="Segmentio">
-            <rect key="frame" x="0.0" y="0.0" width="38" height="20"/>
+            <rect key="frame" x="0.0" y="0.0" width="7" height="7"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZa-CP-X1e">
-                    <rect key="frame" x="0.0" y="0.0" width="38" height="20"/>
+                    <rect key="frame" x="0.0" y="0.0" width="7" height="7"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="7" id="QZe-cE-hDp"/>
+                        <constraint firstAttribute="width" constant="7" id="XS4-3i-L2f"/>
+                    </constraints>
                 </view>
             </subviews>
             <constraints>
