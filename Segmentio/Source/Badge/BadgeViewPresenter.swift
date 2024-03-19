@@ -60,12 +60,12 @@ class BadgeViewPresenter {
         let segmentTitleLabelHorizontalCenterConstraint =
         NSLayoutConstraint(
             item: badgeView,
-            attribute: .top,
+            attribute: .centerY,
             relatedBy: .equal,
             toItem: badgeView.superview,
-            attribute: .top,
+            attribute: .centerY,
             multiplier: 1,
-            constant: 6.0
+            constant: 1
         )
         
         let segmentTitleLabelVerticalCenterConstraint =
