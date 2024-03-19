@@ -39,6 +39,9 @@ class BadgeView: UIView {
     }
     
     func setBadgeBackgroundColor(_ color: UIColor) {
-        self.backgroundColor = color
+        if let contentView =  self.subviews.first(where: { $0 is UIView }) {
+            contentView.backgroundColor = color
+        }
+        
     }
 }
