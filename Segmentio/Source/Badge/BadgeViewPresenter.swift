@@ -76,10 +76,10 @@ class BadgeViewPresenter {
         let segmentTitleLabelVerticalCenterConstraint =
         NSLayoutConstraint(
             item: badgeView,
-            attribute: .leading,
+            attribute: .trailing,
             relatedBy: .equal,
             toItem: labelView,
-            attribute: .leading,
+            attribute: .trailing,
             multiplier: 1,
             constant: 10
         )
