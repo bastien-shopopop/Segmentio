@@ -56,6 +56,12 @@ class BadgeViewPresenter {
     }
     
     fileprivate func setupBadgeConstraints(_ badgeView: BadgeView) {
+        
+        guard let containerView = badgeView.superview else {
+            return
+        }
+        
+        let labelView = containerView.subviews.first(where: { $0 is UILabel })
         let constraintConstant:CGFloat = -5.0
         let segmentTitleLabelHorizontalCenterConstraint =
         NSLayoutConstraint(
@@ -73,10 +79,10 @@ class BadgeViewPresenter {
             item: badgeView,
             attribute: .trailing,
             relatedBy: .equal,
-            toItem: badgeView.superview,
+            toItem: labelView,
             attribute: .trailing,
             multiplier: 1,
-            constant: constraintConstant
+            constant: 10
         )
         segmentTitleLabelHorizontalCenterConstraint.isActive = true
         segmentTitleLabelVerticalCenterConstraint.isActive = true
