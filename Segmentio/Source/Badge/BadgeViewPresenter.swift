@@ -49,7 +49,7 @@ class BadgeViewPresenter {
     
     func removeBadgeFromContainerView(_ containerView: UIView) {
         for view in containerView.subviews {
-            if view is BadgeWithCounterView {
+            if view is BadgeWithCounterView || view is BadgeView {
                 view.removeFromSuperview()
             }
         }
