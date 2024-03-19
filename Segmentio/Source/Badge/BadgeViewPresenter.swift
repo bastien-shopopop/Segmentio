@@ -81,7 +81,7 @@ class BadgeViewPresenter {
             toItem: labelView,
             attribute: .trailing,
             multiplier: 1,
-            constant: 10
+            constant: 15
         )
         segmentTitleLabelHorizontalCenterConstraint.isActive = true
         segmentTitleLabelVerticalCenterConstraint.isActive = true
