@@ -157,6 +157,7 @@ class SegmentioCell: UICollectionViewCell {
         }
         
         let badgePresenter = BadgeViewPresenter()
+        
         if style == .onlyImage {
             badgePresenter.addBadgeForContainerView(
                 imageContainerView!,
@@ -164,6 +165,8 @@ class SegmentioCell: UICollectionViewCell {
                 backgroundColor: color,
                 badgeSize: .standard
             )
+        } else if style == .noCounter {
+            badgePresenter.addBadgeForContainerView(containerView!, backgroundColor: color)
         } else {
             badgePresenter.addBadgeForContainerView(
                 containerView!,
@@ -196,29 +199,19 @@ class SegmentioCell: UICollectionViewCell {
             multiplier: 1,
             constant: 0
         )
-        let segmentTitleLabelTrailingConstraint = NSLayoutConstraint(
+        let segmentTitleLabelHorizontalCenterConstraint = NSLayoutConstraint(
             item: segmentTitleLabel,
-            attribute: .trailing,
+            attribute: .centerX,
             relatedBy: .equal,
             toItem: containerView,
-            attribute: .trailingMargin,
-            multiplier: 1.0,
-            constant: 0
-        )
-        let segmentTitleLabelLeadingConstraint = NSLayoutConstraint(
-            item: segmentTitleLabel,
-            attribute: .leading,
-            relatedBy: .equal,
-            toItem: containerView,
-            attribute: .leadingMargin,
-            multiplier: 1.0,
+            attribute: .centerX,
+            multiplier: 1,
             constant: 0
         )
         
         addConstraints([
-            segmentTitleLabelTrailingConstraint,
             segmentTitleLabelVerticalCenterConstraint,
-            segmentTitleLabelLeadingConstraint
+            segmentTitleLabelHorizontalCenterConstraint
         ])
     }
     
